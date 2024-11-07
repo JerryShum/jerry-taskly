@@ -16,7 +16,7 @@ export async function getTasks(employeeID) {
    let { data: tasks, error } = await supabase
       .from("tasks")
       .select("*")
-      .eq("assigned_to", employeeID);
+      .eq("assigned_user", employeeID);
 
    if (error) {
       throw new Error(error.message);
