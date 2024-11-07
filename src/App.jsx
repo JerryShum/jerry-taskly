@@ -12,6 +12,8 @@ import Dashboard from "./pages/Dashboard";
 import Employee from "./pages/Employee";
 import Manager from "./pages/Manager";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const router = createBrowserRouter([
    {
@@ -41,9 +43,13 @@ const queryClient = new QueryClient();
 
 function App() {
    return (
-      <QueryClientProvider client={queryClient}>
-         <RouterProvider router={router} />;
-      </QueryClientProvider>
+      <>
+         <Toaster />
+         <QueryClientProvider client={queryClient}>
+            <ReactQueryDevtools initialIsOpen={false} />
+            <RouterProvider router={router} />;
+         </QueryClientProvider>
+      </>
    );
 }
 
