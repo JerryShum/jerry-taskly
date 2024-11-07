@@ -11,3 +11,16 @@ export async function createTask(taskData) {
    }
    return data;
 }
+
+export async function getTasks(employeeID) {
+   let { data: tasks, error } = await supabase
+      .from("tasks")
+      .select("*")
+      .eq("assigned_to", employeeID);
+
+   if (error) {
+      throw new Error(error.message);
+   }
+
+   return tasks;
+}
