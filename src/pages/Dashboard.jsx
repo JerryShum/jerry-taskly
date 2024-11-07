@@ -4,15 +4,6 @@ import { Link } from "react-router-dom";
 import { getAllUsers } from "../api/apiUsers";
 
 const Dashboard = () => {
-   const {
-      data: users,
-      isLoading,
-      error,
-   } = useQuery({
-      queryKey: ["users"],
-      queryFn: getAllUsers,
-   });
-
    return (
       <div className="text-center">
          <h1 className="text-3xl font-bold text-blue-600">Dashboard</h1>
