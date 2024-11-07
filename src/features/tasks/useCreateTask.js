@@ -13,7 +13,10 @@ export function useCreateTask() {
             queryKey: "tasks",
          });
       },
-      onError: (error) => toast.error(error.message),
+      onError: (error) =>
+         toast.error(
+            "An error has occurred while creating task: " + error.message
+         ),
    });
 
    return { createTask, isCreating };
