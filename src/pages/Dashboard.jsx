@@ -1,7 +1,18 @@
 // src/pages/Dashboard.js
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { getAllUsers } from "../api/apiUsers";
 
 const Dashboard = () => {
+   const {
+      data: users,
+      isLoading,
+      error,
+   } = useQuery({
+      queryKey: ["users"],
+      queryFn: getAllUsers,
+   });
+
    return (
       <div className="text-center">
          <h1 className="text-3xl font-bold text-blue-600">Dashboard</h1>
@@ -19,6 +30,17 @@ const Dashboard = () => {
             >
                Manager Dashboard
             </Link>
+         </div>
+
+         <div>
+            <h1 className="text-2xl font-bold">User List</h1>
+            <ul className="mt-4 bg-white p-4 rounded shadow">
+               {users?.map((user) => (
+                  <li key={user.id} className="py-2 border-b">
+                     {user.name} - {user.role}
+                  </li>
+               ))}
+            </ul>
          </div>
       </div>
    );
