@@ -1,9 +1,9 @@
-// src/pages/Dashboard.js
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { getAllUsers } from "../api/apiUsers";
+import { useEmployees } from "../features/users/useEmployees";
 
 const Dashboard = () => {
+   const { users, isLoading, error } = useEmployees();
+
    return (
       <div className="text-center">
          <h1 className="text-3xl font-bold text-blue-600">Dashboard</h1>
