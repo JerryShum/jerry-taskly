@@ -22,7 +22,7 @@ function EmployeeDropdown({ setSelectedEmployee }) {
             <option value="" disabled>
                Select an employee
             </option>
-            {users.map((employee) => (
+            {users?.map((employee) => (
                <option key={employee.id} value={employee.id}>
                   {employee.name} | {employee.email}
                </option>
