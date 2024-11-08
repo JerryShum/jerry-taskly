@@ -2,6 +2,8 @@
 
 A task management app for viewing tasks assigned to employees. Managers can select an employee from a dropdown, displaying tasks associated with them.
 
+This is based on the IEC 2024 - Taskly Application that the members of Team Wesley created for the OntarioTech Internal Engineering Competition.
+
 ## Features
 
 - **Employee Selection**: Dropdown to select an employee, fetching tasks based on the selection.
@@ -34,7 +36,7 @@ Provides clean and customizable toast notifications for user feedback.
 ## Getting Started
 
 1. Install dependencies: `npm install`
-2. Run the app: `npm start`
+2. Run the app: `npm run dev`
 3. Select an employee to view their assigned tasks.
 
 ---
