@@ -3,6 +3,7 @@ import EmployeeDropdown from "../features/employee/EmployeeDropdown";
 import { useTasks } from "../features/tasks/useTasks";
 import { toast } from "react-hot-toast";
 import TaskItem from "../features/tasks/TaskItem";
+import Spinner from "../UI/Spinner";
 
 const EmployeeDashboard = () => {
    const [selectedEmployee, setSelectedEmployee] = useState(null);
@@ -19,6 +20,8 @@ const EmployeeDashboard = () => {
          </h1>
          <h2>Please select an employee:</h2>
          <EmployeeDropdown setSelectedEmployee={setSelectedEmployee} />
+
+         {isLoading && <Spinner />}
          {tasks && (
             <>
                <p className="mt-4 text-gray-700">
