@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function TaskItem({ task }) {
-   const { title, description, start_date, due_date } = task;
+   const { title, description, start_date, due_date, estimated_time } = task;
 
    const [isExpanded, setIsExpanded] = useState(false);
 
@@ -29,6 +29,10 @@ function TaskItem({ task }) {
                </p>
                <p>
                   <span className="font-semibold">Due Date:</span> {due_date}
+               </p>
+               <p>
+                  <span className="font-semibold">Estimated Time:</span>{" "}
+                  {estimated_time} Hours
                </p>
             </div>
          )}

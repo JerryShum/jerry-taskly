@@ -1,0 +1,33 @@
+.rbc-toolbar {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1rem;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+   flex: 1;
+   text-align: center;
+   font-size: 1.25rem;
+   font-weight: bold;
+}
+
+.rbc-toolbar button {
+   padding: 0.5rem 1rem;
+   font-size: 0.875rem;
+   white-space: nowrap;
+}
+
+.rbc-toolbar button:focus {
+   outline: none;
+}
+
+.rbc-btn-group {
+   display: flex;
+   gap: 0.5rem;
+}
+
+.rbc-btn-group > button {
+   flex: 1;
+}
