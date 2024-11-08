@@ -13,12 +13,16 @@ function EmployeeDropdown({ setSelectedEmployee }) {
       queryClient.invalidateQueries(["tasks", selectedEmployee.id]); // Optionally invalidate to fetch new tasks
    }
 
-   if (isLoading) return <p>Loading...</p>;
-   if (error) return <p>Error loading employees</p>;
+   if (isLoading) return <p className="text-gray-500">Loading employees...</p>;
+   if (error) return <p className="text-red-500">Error loading employees</p>;
 
    return (
-      <div>
-         <select defaultValue="" onChange={handleChange}>
+      <div className="mt-4">
+         <select
+            defaultValue=""
+            onChange={handleChange}
+            className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
+         >
             <option value="" disabled>
                Select an employee
             </option>

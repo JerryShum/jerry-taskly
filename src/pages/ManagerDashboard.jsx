@@ -1,16 +1,15 @@
 import TaskForm from "../features/tasks/TaskForm";
 
-// src/pages/ManagerDashboard.js
 const ManagerDashboard = () => {
    return (
-      <div>
-         <h1 className="text-2xl font-bold text-purple-600">
+      <div className="p-6 bg-gray-50 min-h-screen rounded-3xl">
+         <h1 className="text-3xl font-semibold text-purple-600 text-center mb-4">
             Manager Dashboard
          </h1>
-         <p className="mt-4 text-gray-700">
+         <p className="text-lg text-gray-700 text-center mb-6">
             Assign tasks to employees and manage their workload:
          </p>
-         <div>
+         <div className=" mx-autop-6 g">
             <TaskForm />
          </div>
       </div>

@@ -14,29 +14,36 @@ const EmployeeDashboard = () => {
    }
 
    return (
-      <div>
-         <h1 className="text-2xl font-bold text-green-600">
+      <div className="p-6 bg-gray-50 min-h-screen rounded-3xl">
+         <h1 className="text-3xl font-semibold text-green-600 mb-4 text-center">
             Employee Dashboard
          </h1>
-         <h2>Please select an employee:</h2>
-         <EmployeeDropdown setSelectedEmployee={setSelectedEmployee} />
+         <div className="max-w-md mx-auto">
+            <h2 className="text-lg text-gray-800 mb-2 text-center">
+               Please select an employee:
+            </h2>
+            <EmployeeDropdown setSelectedEmployee={setSelectedEmployee} />
+         </div>
 
-         {isLoading && <Spinner />}
-         {tasks && (
-            <>
-               <p className="mt-4 text-gray-700">
-                  Here are your assigned tasks:
-               </p>
-               <ul className="mt-4 bg-white p-4 rounded shadow">
-                  {tasks?.map((task, index) => (
-                     <TaskItem task={task} key={index} />
-                  ))}
-                  {tasks?.length < 1 && (
-                     <li>You currently have no tasks! Hurray!</li>
-                  )}
-               </ul>
-            </>
-         )}
+         <div className="mt-8 max-w-lg mx-auto">
+            {isLoading && <Spinner />}
+            {tasks && (
+               <div className="bg-white p-6 rounded-lg shadow-lg mt-4">
+                  <p className="text-gray-700 font-medium">Assigned tasks:</p>
+                  <ul className="mt-4 space-y-3">
+                     {tasks.length > 0 ? (
+                        tasks.map((task, index) => (
+                           <TaskItem task={task} key={index} />
+                        ))
+                     ) : (
+                        <li className="text-gray-500 italic">
+                           You currently have no tasks! Hurray!
+                        </li>
+                     )}
+                  </ul>
+               </div>
+            )}
+         </div>
       </div>
    );
 };
