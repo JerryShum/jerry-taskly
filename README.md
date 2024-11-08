@@ -1,6 +1,6 @@
 # Employee Task Dashboard
 
-A task management app for viewing tasks assigned to employees. Managers can select an employee from a dropdown, displaying tasks associated with them.
+A task management app for viewing tasks assigned to employees. Managers can select an employee from a dropdown, displaying tasks associated with them. Mostly used for learning purposes to learn how to combine certain react libraries together along with supabase.
 
 This is based on the IEC 2024 - Taskly Application that the members of Team Wesley created for the OntarioTech Internal Engineering Competition.
 
