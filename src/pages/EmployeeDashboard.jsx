@@ -6,7 +6,7 @@ import TaskItem from "../features/tasks/TaskItem";
 import Spinner from "../UI/Spinner";
 
 const EmployeeDashboard = () => {
-   const [selectedEmployee, setSelectedEmployee] = useState(null);
+   const [selectedEmployee, setSelectedEmployee] = useState();
    const { tasks, isLoading, error } = useTasks(selectedEmployee?.id);
 
    if (error) {

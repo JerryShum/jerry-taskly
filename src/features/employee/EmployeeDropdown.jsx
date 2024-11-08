@@ -10,7 +10,7 @@ function EmployeeDropdown({ setSelectedEmployee }) {
          (employee) => employee.id === Number(event.target.value)
       );
       setSelectedEmployee(selectedEmployee);
-      queryClient.invalidateQueries(["tasks", selectedEmployee.id]);
+      queryClient.invalidateQueries(["tasks", selectedEmployee.id]); // Optionally invalidate to fetch new tasks
    }
 
    if (isLoading) return <p>Loading...</p>;
