@@ -12,7 +12,10 @@ function TaskItem({ task }) {
          onClick={toggleExpand}
          className="p-4 mb-4 bg-gray-100 rounded-lg shadow cursor-pointer hover:bg-gray-200 transition"
       >
-         <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+         <div className="flex justify-between items-start">
+            <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+            <span className="text-gray-500">{isExpanded ? "👆" : "👇"}</span>
+         </div>
 
          {isExpanded && (
             <div className="mt-2 text-gray-700">
