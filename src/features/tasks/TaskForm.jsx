@@ -157,6 +157,28 @@ const TaskForm = () => {
                </div>
             </div>
 
+            <div>
+               <label
+                  htmlFor="estimated_time"
+                  className="block text-sm font-medium text-gray-600"
+               >
+                  Estimated Time
+               </label>
+               <input
+                  type="number"
+                  id="estimated_time"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400"
+                  {...register("estimated_time", {
+                     required: "The estimated time is required.",
+                  })}
+               />
+               {errors.estimated_time && (
+                  <p className="text-red-500 text-xs mt-1">
+                     {errors.estimated_time.message}
+                  </p>
+               )}
+            </div>
+
             {/* Submit Button */}
             <button
                type="submit"
